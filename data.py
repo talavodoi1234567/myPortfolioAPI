@@ -1,11 +1,11 @@
 from pymongo import MongoClient
+import os
 # from pymongo.server_api import ServerApi
 
-MONGODB_USER = 'talavodoi0123'
-MONGODB_PASSWORD = '2Fw6co0FMIRlKpnu'
-
+user = os.getenv('MONGODB_USER')
+password = os.getenv('MONGODB_PASSWORD')
 # Kết nối tới MongoDB
-uri = f"mongodb+srv://{MONGODB_USER}:{MONGODB_PASSWORD}@myportfolio.yoghy.mongodb.net/?retryWrites=true&w=majority&appName=MyPortfolio"
+uri = f"mongodb+srv://{user}:{password}@myportfolio.yoghy.mongodb.net/?retryWrites=true&w=majority&appName=MyPortfolio"
 # Lấy database
 client = MongoClient(uri)
 
@@ -34,4 +34,4 @@ def overAllData():
     }
 
 if __name__ == '__main__':
-    print(overAllData())
+    print(user, password)
