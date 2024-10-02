@@ -23,9 +23,14 @@ def getHeader(language):
 
 def overAllData():
     data = db['languages']
+    dataPicMedia = db['overAll']
     return {
         'en': data.find()[0]['en'],
-        'vi': data.find()[0]['vi']
+        'vi': data.find()[0]['vi'],
+        'overall': {
+            'profilePicture': dataPicMedia.find()[0]['profilePicture'],
+            'socialMedia': dataPicMedia.find()[0]['socialMedia']
+        }
     }
 
 if __name__ == '__main__':
