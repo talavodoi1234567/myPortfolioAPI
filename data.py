@@ -21,5 +21,12 @@ def getHeader(language):
     data = db['languages']
     return [i for i in data.find({}, {f"{language}.header": 1, '_id': 0})][0].get(f'{language}').get('header')
 
+def overAllData():
+    data = db['languages']
+    return {
+        'en': data.find()[0]['en'],
+        'vi': data.find()[0]['vi']
+    }
+
 if __name__ == '__main__':
-    print(getHeader('vi'))
+    print(overAllData())

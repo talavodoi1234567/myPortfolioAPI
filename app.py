@@ -36,3 +36,7 @@ async def getHeaderAPI(language):
     return {
         'header': getHeader(language)
     }
+
+@app.get('/overall')
+async def getOverall():
+    return overAllData()
