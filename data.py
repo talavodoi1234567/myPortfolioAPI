@@ -1,9 +1,12 @@
 from pymongo import MongoClient
 import os
+from dotenv import load_dotenv
 # from pymongo.server_api import ServerApi
 
-user = 'talavodoi0123'
-password = '2Fw6co0FMIRlKpnu'
+load_dotenv()
+
+user = os.getenv('MONGODB_USER')
+password = os.getenv('MONGODB_PASSWORD')
 # Kết nối tới MongoDB
 uri = f"mongodb+srv://{user}:{password}@myportfolio.yoghy.mongodb.net/?retryWrites=true&w=majority&appName=MyPortfolio"
 # Lấy database
