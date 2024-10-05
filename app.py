@@ -1,14 +1,14 @@
 from typing import Union
 
 import httpx
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from data import *
 
 app = FastAPI()
-load_dotenv()
+# load_dotenv()
 
 origins = [
     "http://localhost:3000",
